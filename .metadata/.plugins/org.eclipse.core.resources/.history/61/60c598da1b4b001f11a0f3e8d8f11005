@@ -6,8 +6,8 @@ public class FinalTest {
 		Circle circle3 = new Circle(30);
 	
 		Car car1 = new Car("MH-01-XA-664","BMW");
-		Car car2 = new Car("MH-01-XA-664","BMW");
-		Car car3 = new Car("MH-01-XA-664","BMW");
+		Car car1 = new Car("MH-01-XA-664","BMW");
+		Car car1 = new Car("MH-01-XA-664","BMW");
 		
 	}
 }
@@ -26,7 +26,7 @@ class Car
 	}
 	
 	void setCar(String np) {
-		//numberPlate =np;
+		numberPlate =np;
 	}
 	
 	

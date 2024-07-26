@@ -1,0 +1,25 @@
+
+public class FinalMethodTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Chess chess = new GraphicalChess();
+		chess.moveBishop();
+	}
+
+}
+class Chess // Aniket
+{
+	void moveBishop() {
+		System.out.println("Moving the bishop diagonally forward/backward ");
+		//a math logic is here ....
+	}
+}
+class GraphicalChess extends Chess // Sarah
+{
+	void moveBishop() {
+		super.moveBishop(); //reuse the math logic
+		System.out.println("Using graphics here....");
+	}
+}

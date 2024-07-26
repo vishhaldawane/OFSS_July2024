@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 
 
 //public, abstract or final
-public class BankAccount {
+public abstract class BankAccount {
 	 private int accountNumber;
 	 private String accountHolderName;
 	 private double accountBalance;

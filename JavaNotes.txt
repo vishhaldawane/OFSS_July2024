@@ -429,23 +429,43 @@ class Main
 
 -------------------------------------------------------------------------------------------
 
-	static		sharable 
-			copy across
-			the instances	
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
 			of a class
 -------------------------------------------------------------------------------------------
 	
 
-	abstract
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
 
 -------------------------------------------------------------------------------------------
 
 
 
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
 
+	}
+}
 
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
 
+}
 
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
 
 
 

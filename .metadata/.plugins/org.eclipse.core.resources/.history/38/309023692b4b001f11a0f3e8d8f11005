@@ -27,8 +27,6 @@ public class BankAccount {
 		System.out.println("Acc Holder  : "+accountHolderName);
 		System.out.println("Acc Balance : "+accountBalance);				
 		System.out.println("Acc Date    : "+accountOpeningDate);				
-		System.out.println("Acc ROI     : "+BankAccount.rateOfInterest);				
-		
 	}
 	
 }

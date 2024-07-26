@@ -84,6 +84,17 @@ Tailor 1. measure() { }
 		- the purpose of  data with its concerned functions
 
 
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
 POPS = procedures<--- data 
 OOPS = data<---procedure
 

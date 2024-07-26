@@ -23,12 +23,6 @@ public class BankTest {
 		baObj2.setBankAccount(7839, "King", 5000);
 		baObj2.printBankAccount();
 		
-		System.out.println("New rate is set....");
-		BankAccount.setRateOfInterest(4.5f);
-		
-		baObj1.printBankAccount();
-		baObj2.printBankAccount();
-		
 		
 		
 			}

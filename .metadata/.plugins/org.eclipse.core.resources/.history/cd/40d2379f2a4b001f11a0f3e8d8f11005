@@ -30,7 +30,7 @@ class Chess // Aniket
 		//a math logic is here ....
 	}
 }
-final class GraphicalChess extends Chess // Sarah
+class GraphicalChess extends Chess // Sarah
 {
 	void moveMyBishop() {
 		super.moveBishop(); //reuse the math logic
@@ -38,16 +38,3 @@ final class GraphicalChess extends Chess // Sarah
 		System.out.println("Bishop is moving in L shape");
 	}
 }
-
-class WebBasedGraphicalChess extends GraphicalChess
-{
-	
-}
-
-
-
-
-
-
-
-

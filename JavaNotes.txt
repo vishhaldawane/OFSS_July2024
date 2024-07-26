@@ -1,0 +1,467 @@
+
+
+
+
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 
+			copy across
+			the instances	
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

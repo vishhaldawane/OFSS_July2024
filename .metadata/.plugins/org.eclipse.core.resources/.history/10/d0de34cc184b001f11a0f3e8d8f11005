@@ -1,0 +1,23 @@
+
+public class FinalTest {
+	public static void main(String[] args) {
+		Circle circle1 = new Circle(10);
+		Circle circle2 = new Circle(20);
+		Circle circle3 = new Circle(30);
+		
+	}
+}
+class Circle
+{
+	float radius;
+	final float PI=3.14f; //constant
+	
+	public Circle(float radius) {
+		super();
+		this.radius = radius;
+	}
+	
+	void calculateArea() {
+		float area = PI*radius * radius;
+	}
+}

@@ -1,0 +1,10 @@
+import java.time.LocalDateTime;
+
+public class BankTest1 {
+	public static void main(String[] args) {
+		
+		BankAccount1 baObj = new BankAccount1();
+		baObj.setBankAccount1(101, "Jane", 6000, LocalDateTime.now());
+		System.out.println("baObj : "+baObj);
+	}
+}

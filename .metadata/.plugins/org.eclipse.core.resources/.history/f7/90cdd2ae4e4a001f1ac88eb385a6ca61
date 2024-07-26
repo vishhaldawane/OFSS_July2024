@@ -1,0 +1,12 @@
+
+//BUSINESS ENTITY 
+
+public class BankAccount {
+	public int accountNumber;
+	private String accountHolderName;
+	private double accountBalance;
+	
+	
+	
+}
+ 

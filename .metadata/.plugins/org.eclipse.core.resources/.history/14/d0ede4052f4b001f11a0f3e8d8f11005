@@ -9,9 +9,9 @@ public class BankTest {
 		BankAccount.BankPermission bankPerm = new BankAccount.BankPermission();
 		//BankPermission bankPerm = new BankPermission();
 
-		//bankPerm.setDeposit(true);
-		//bankPerm.setWithdraw(true);
-		//bankPerm.setTransfer(true);
+		bankPerm.setDeposit(true);
+		bankPerm.setWithdraw(true);
+		bankPerm.setTransfer(true);
 		
 		BankAccount.setRateOfInterest(3.5f);
 		
@@ -23,13 +23,13 @@ public class BankTest {
 //The field BankAccount.accountNumber is not visible
 		//baObj1.accountNumber=101;
 		
-		baObj1.setBankAccount(7839, "King", 5000,false);
+		baObj1.setBankAccount(7839, "King", 5000);
 		baObj1.printBankAccount();
 		
 		BankAccount baObj2; //just a refToAnObject
 		baObj2 = new BankAccount();//ctor
 		
-		baObj2.setBankAccount(1234, "Queen", 8000,true);
+		baObj2.setBankAccount(7839, "King", 5000);
 		baObj2.printBankAccount();
 		
 		System.out.println("New rate is set....");
@@ -38,10 +38,6 @@ public class BankTest {
 		baObj1.printBankAccount();
 		baObj2.printBankAccount();
 		
-		baObj1.withdraw(500);
-		baObj2.withdraw(500);
-		baObj1.printBankAccount();
-		baObj2.printBankAccount();
 		
 		
 			}

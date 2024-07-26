@@ -2,17 +2,6 @@ import java.time.LocalDateTime;
 
 //BUSINESS ENTITY 
 
-//1. enclosed class 'BankPermission'
-//   if static, then outside world need to 
-//   refer the enclosing ' BankAccount' class name to refer it
-
-//2. enclosed class 'BankPermission'
-// if not static, then make an object of it
-//and then access it
-
-//3. enclosed class 'BankPermission' 
-// 
-
 
 //public, abstract or final
 public class BankAccount {
@@ -23,12 +12,9 @@ public class BankAccount {
 	 
 	 private static float rateOfInterest;
 	 
-	 //hasA 
-	 private BankPermission bankPerm = new BankPermission();
+	BankPermission bankPerm = new BankPermission();
 
-	//inner design solely used by the enclosing class
-	
-	static class BankPermission //inner class
+	private class BankPermission
 	{
 		boolean withdraw;
 		boolean deposit;
@@ -62,24 +48,12 @@ public class BankAccount {
 		 System.out.println("Setting the rate");
 		 BankAccount.rateOfInterest = rateOfInterest;
 	 }
-	 
-	 void withdraw(float amt) {
-		 System.out.println("\nWithdrawing...."+amt);
-		 if(bankPerm.canWithdraw()) {
-			 accountBalance-=amt;
-		 }
-		 else {
-			 System.out.println("Withdraw NOT permitted....");
-		 }
-		 
-	 }
 	//default - in the same package
-	void setBankAccount(int accountNumber, String b, double c, boolean withdrawlPermission) {
+	void setBankAccount(int accountNumber, String b, double c) {
 		this.accountNumber =accountNumber ;
 		accountHolderName=b;
 		accountBalance=c;
 		accountOpeningDate = LocalDateTime.now(); //static function
-		bankPerm.setWithdraw(withdrawlPermission);
 	}
 	void printBankAccount() {
 		//sysout -> ctrl spacebar
@@ -88,7 +62,7 @@ public class BankAccount {
 		System.out.println("Acc Balance : "+accountBalance);				
 		System.out.println("Acc Date    : "+accountOpeningDate);				
 		System.out.println("Acc ROI     : "+BankAccount.rateOfInterest);				
-		System.out.println("----------------");
+		
 	}
 	
 }

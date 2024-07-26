@@ -2,17 +2,6 @@ import java.time.LocalDateTime;
 
 //BUSINESS ENTITY 
 
-//1. enclosed class 'BankPermission'
-//   if static, then outside world need to 
-//   refer the enclosing ' BankAccount' class name to refer it
-
-//2. enclosed class 'BankPermission'
-// if not static, then make an object of it
-//and then access it
-
-//3. enclosed class 'BankPermission' 
-// 
-
 
 //public, abstract or final
 public class BankAccount {
@@ -23,7 +12,6 @@ public class BankAccount {
 	 
 	 private static float rateOfInterest;
 	 
-	 //hasA 
 	 private BankPermission bankPerm = new BankPermission();
 
 	//inner design solely used by the enclosing class

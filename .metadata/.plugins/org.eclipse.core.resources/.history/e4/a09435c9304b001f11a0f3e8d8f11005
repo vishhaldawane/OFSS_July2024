@@ -6,7 +6,7 @@ public class BankTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		BankAccount.BankPermission bankPerm = new BankAccount.BankPermission();
+		//BankAccount.BankPermission bankPerm = new BankAccount.BankPermission();
 		//BankPermission bankPerm = new BankPermission();
 
 		//bankPerm.setDeposit(true);

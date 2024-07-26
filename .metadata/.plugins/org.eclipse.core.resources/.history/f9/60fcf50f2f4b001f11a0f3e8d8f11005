@@ -6,7 +6,7 @@ public class BankTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		BankAccount.BankPermission bankPerm = new BankAccount.BankPermission();
+		//BankAccount.BankPermission bankPerm = new BankAccount.BankPermission();
 		//BankPermission bankPerm = new BankPermission();
 
 		//bankPerm.setDeposit(true);
@@ -29,7 +29,7 @@ public class BankTest {
 		BankAccount baObj2; //just a refToAnObject
 		baObj2 = new BankAccount();//ctor
 		
-		baObj2.setBankAccount(1234, "Queen", 8000,true);
+		baObj2.setBankAccount(7839, "King", 5000,true);
 		baObj2.printBankAccount();
 		
 		System.out.println("New rate is set....");
@@ -40,9 +40,7 @@ public class BankTest {
 		
 		baObj1.withdraw(500);
 		baObj2.withdraw(500);
-		baObj1.printBankAccount();
-		baObj2.printBankAccount();
-		
+
 		
 			}
  

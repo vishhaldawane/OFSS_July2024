@@ -3,7 +3,7 @@ import java.util.Iterator;
 public class CarTest {
 	public static void main(String[] args) {
 		System.out.println("Begin of main");
-		Car car;
+		Car car = null;
 		try {
 			car = new Car();
 			car.startTheCar();
@@ -20,6 +20,13 @@ public class CarTest {
 		}
 		catch (Exception e) {
 			System.out.println("[ Car problem : ] "+e);	
+		}
+		finally {
+			System.out.println("Finally the journey is over...");
+			if(car!=null)
+				car.stopTheCar();
+			else
+				System.out.println("No question of stopping the car...");
 		}
 		
 		System.out.println("End of main");

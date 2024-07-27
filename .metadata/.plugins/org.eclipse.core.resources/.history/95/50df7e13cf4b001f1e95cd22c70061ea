@@ -1,0 +1,103 @@
+
+public class TransferTest {
+	public static void main(String[] args) {
+	
+		CurrentAccount currAcc = new CurrentAccount(5000000);
+		
+		SavingsAccount savAcc1 = new SavingsAccount(30000);
+		SavingsAccount savAcc2 = new SavingsAccount(20000);
+		SavingsAccount savAcc3 = new SavingsAccount(60000);
+		SavingsAccount savAcc4 = new SavingsAccount(20000);
+		SavingsAccount savAcc5 = new SavingsAccount(80000);
+		
+		currAcc.showBalance();
+		savAcc1.showBalance();
+		
+		System.out.println("----transferring funds-----");
+		double amtToTransact=50000;
+		currAcc.withdraw(amtToTransact);
+		savAcc1.deposit(amtToTransact);
+		System.out.println("----funds transferred------\n");
+		
+		System.out.println("----transferring funds-----");
+		amtToTransact=50000;
+		currAcc.withdraw(amtToTransact);
+		savAcc2.deposit(amtToTransact);
+		System.out.println("----funds transferred------");
+
+		System.out.println("----transferring funds-----\n");
+		amtToTransact=50000;
+		currAcc.withdraw(amtToTransact);
+		savAcc3.deposit(amtToTransact);
+		System.out.println("----funds transferred------");
+
+		System.out.println("----transferring funds-----\n");
+		amtToTransact=50000;
+		currAcc.withdraw(amtToTransact);
+		savAcc3.deposit(amtToTransact);
+		System.out.println("----funds transferred------");
+
+		System.out.println("----transferring funds-----\n");
+		amtToTransact=50000;
+		currAcc.withdraw(amtToTransact);
+		savAcc4.deposit(amtToTransact);
+		System.out.println("----funds transferred------");
+		
+		System.out.println("----transferring funds-----\n");
+		amtToTransact=50000;
+		currAcc.withdraw(amtToTransact);
+		savAcc5.deposit(amtToTransact);
+		System.out.println("----funds transferred------");
+
+		
+		currAcc.showBalance();
+		savAcc1.showBalance();
+		savAcc2.showBalance();
+		savAcc3.showBalance();
+		savAcc4.showBalance();
+		savAcc5.showBalance();
+		
+		
+	}
+}
+
+class CurrentAccount
+{
+	double balance;
+	
+	CurrentAccount(double bal) {
+		balance = bal;
+	}
+	void withdraw(double amt) {
+		balance -=amt;
+	}
+	void deposit(double amt) {
+		balance +=amt;
+	}
+	void showBalance() {
+		System.out.println("Current Account : "+balance);
+	}
+}
+
+class SavingsAccount
+{
+	double balance;
+	
+	SavingsAccount(double bal) {
+		balance = bal;
+	}
+	void withdraw(double amt) {
+		balance -=amt;
+	}
+	void deposit(double amt) {
+		balance +=amt;
+	}
+	void showBalance() {
+		System.out.println("Savings Account : "+balance);
+	}
+}
+
+
+
+
+

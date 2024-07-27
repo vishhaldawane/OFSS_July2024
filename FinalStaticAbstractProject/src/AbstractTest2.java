@@ -1,35 +1,80 @@
+/*
 
+	Human	Reactive
+		|	|
+		Person	Responsive
+			|	  |
+			Student	Proactive
+				|	   |
+				Employee  Executing
+					|		|
+					Executive  Managing
+						|	    
+					   Manager Directing
+						|	   |
+						Director
+						
+						
+		Human	Reactive
+		|	|		|
+		Person	Responsive
+			|	  |	    |
+			Student	Proactive
+				|	   |   |
+				Employee  Executing
+					|		|    |
+					Executive  Managing
+						|	      |
+					   Manager Directing
+						|	   |
+						Director
+
+
+*/
 public class AbstractTest2 {
 	public static void main(String[] args) {
+		//object slicing 
 		
-		Directing x = new Director();
+		Director  directorObj = new Director();
+		Seminar.meetings(directorObj);
 		
-		x.react();
-		x.respond();
-		x.proact();
-		x.execute();
-		x.manage();
-		x.direct();
+		Reactive  react = directorObj;
+		react.react();
+		//react.direct();
 		
 	}
 }
+class Seminar
+{
+	static void meetings(Managing x) {
+		System.out.println("Meeting for ");
+		x.direct();
+		x.manage();
+		x.execute();
+		x.proact();
+		x.respond();
+		x.react();
+	}
+}
+
+
 
 interface Reactive {
 	void react();
 }
-interface Responsive {
+interface Responsive extends Reactive {
 	void respond();
 }
-interface Proactive {
+interface Proactive extends Responsive {
 	void proact();
 }
-interface Executing {
+interface Executing extends Proactive {
 	void execute();
 }
-interface Managing {
+interface Managing extends Executing {
 	void manage();
 }
-interface Directing {
+interface Directing extends Managing {
 	void direct();
 }
 class Human { }

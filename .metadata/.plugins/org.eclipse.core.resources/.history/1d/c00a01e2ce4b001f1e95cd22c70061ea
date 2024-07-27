@@ -1,0 +1,64 @@
+
+public class TransferTest {
+	public static void main(String[] args) {
+	
+		CurrentAccount currAcc = new CurrentAccount(5000000);
+		
+		SavingsAccount savAcc = new SavingsAccount(30000);
+		
+		currAcc.showBalance();
+		savAcc.showBalance();
+		
+		System.out.println("----transferring funds-----");
+		double amtToTransact=50000;
+		currAcc.withdraw(amtToTransact);
+		savAcc.deposit(amtToTransact);
+		
+		System.out.println("----funds transferred------");
+
+		currAcc.showBalance();
+		savAcc.showBalance();
+		
+	}
+}
+
+class CurrentAccount
+{
+	double balance;
+	
+	CurrentAccount(double bal) {
+		balance = bal;
+	}
+	void withdraw(double amt) {
+		balance -=amt;
+	}
+	void deposit(double amt) {
+		balance +=amt;
+	}
+	void showBalance() {
+		System.out.println("Current Account : "+balance);
+	}
+}
+
+class SavingsAccount
+{
+	double balance;
+	
+	SavingsAccount(double bal) {
+		balance = bal;
+	}
+	void withdraw(double amt) {
+		balance -=amt;
+	}
+	void deposit(double amt) {
+		balance +=amt;
+	}
+	void showBalance() {
+		System.out.println("Savings Account : "+balance);
+	}
+}
+
+
+
+
+

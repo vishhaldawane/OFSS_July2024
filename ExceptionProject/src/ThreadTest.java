@@ -5,13 +5,30 @@ public class ThreadTest {
 		Bike bike = new Bike();
 		SedanCar car = new SedanCar();
 		Train train = new Train();
-		
+
+		Person person = new Person();
+		Thread t = new Thread(person);
 		
 		bike.start(); //invoke Thread's start()-> that invokes the run()
 		car.start();
 		train.start();
+		
+		
+		t.start();
+		
 	}
 }
+class Human {
+	
+}
+class Person extends Human implements Runnable {
+	public void run() {
+		for (int i = 0; i < 20; i++) {
+			System.out.println("Person is running....");
+		}
+	}
+}
+
 class Bike extends Thread //1
 {
 	

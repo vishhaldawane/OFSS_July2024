@@ -8,10 +8,20 @@ public class CarTest {
 			car = new Car();
 			car.startTheCar();
 
-		} catch (Exception e) {
-			System.out.println("Some problem : "+e);	
-
+		} 
+		catch(CarKeyNotFoundException e) {
+			System.out.println("[ Key problem : ] "+e);	
 		}
+		catch(SpeedLimitExceededException e) {
+			System.out.println("[ Speed problem : ] "+e);	
+		}
+		catch(TyrePuncturedException e) {
+			System.out.println("[ Tyre problem : ] "+e);	
+		}
+		catch (Exception e) {
+			System.out.println("[ Car problem : ] "+e);	
+		}
+		
 		System.out.println("End of main");
 	}
 }
@@ -64,7 +74,7 @@ class Car
 			if(d>0.99) {
 				throw new SpeedLimitExceededException("Speed limit exceeded");
 			}
-			else if(d>0.20 && d<0.22) {
+			else if(d>0.20 && d<0.30) {
 				throw new TyrePuncturedException("Tyre punctured exception....");
 			} 
 		}

@@ -4,7 +4,6 @@
 
 
 
-
 			Java Technology
 				|
 		----------------------------------
@@ -535,6 +534,35 @@ class Car
 		}
 	}
 }
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread			Person
+				| start(){}
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
 
 
 

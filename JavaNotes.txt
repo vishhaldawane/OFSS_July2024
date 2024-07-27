@@ -467,6 +467,81 @@ class Test
 	}
 }
 
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+
+
+
+
 
 
 

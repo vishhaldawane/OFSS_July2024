@@ -36,8 +36,7 @@ class Calculator
 		catch(ArithmeticException e) {
 			System.out.println("Cannot divide by zero...");
 		}
-	}
-	
+	}	
 }
 
 

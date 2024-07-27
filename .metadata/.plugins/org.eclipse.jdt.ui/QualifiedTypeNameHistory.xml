@@ -4,4 +4,9 @@
     <fullyQualifiedTypeName name="BankAccount1"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="HeartSurgeon"/>
+    <fullyQualifiedTypeName name="GraphicalChess"/>
+    <fullyQualifiedTypeName name="BankAccount"/>
+    <fullyQualifiedTypeName name="BankPermission"/>
+    <fullyQualifiedTypeName name="BankAccount.BankPermission"/>
+    <fullyQualifiedTypeName name="GeometricalShape"/>
 </qualifiedTypeNameHistroy>

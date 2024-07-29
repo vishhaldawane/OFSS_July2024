@@ -9,4 +9,16 @@
     <fullyQualifiedTypeName name="BankPermission"/>
     <fullyQualifiedTypeName name="BankAccount.BankPermission"/>
     <fullyQualifiedTypeName name="GeometricalShape"/>
+    <fullyQualifiedTypeName name="Seminar"/>
+    <fullyQualifiedTypeName name="Executing"/>
+    <fullyQualifiedTypeName name="CurrentAccount"/>
+    <fullyQualifiedTypeName name="SavingsAccount"/>
+    <fullyQualifiedTypeName name="FundsTransferService"/>
+    <fullyQualifiedTypeName name="Withdrawing"/>
+    <fullyQualifiedTypeName name="Depositing"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="CarKeyNotFoundException"/>
+    <fullyQualifiedTypeName name="SpeedLimitExceededException"/>
+    <fullyQualifiedTypeName name="TyrePuncturedException"/>
 </qualifiedTypeNameHistroy>

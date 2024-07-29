@@ -12,10 +12,9 @@ public class ThreadTest {
 		bike.start(); //invoke Thread's start()-> that invokes the run()
 		car.start();
 		train.start();
-		
-		
 		t.start();
 		
+		System.out.println("MAIN OVER...");
 	}
 }
 class Human {

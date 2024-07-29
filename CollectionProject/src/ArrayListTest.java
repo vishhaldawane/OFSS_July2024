@@ -12,21 +12,17 @@ public class ArrayListTest {
 		PhoneLog log3 = new PhoneLog(5,"Recieved","Neeta",LocalDateTime.of(2024, 7, 28, 11, 45));
 		PhoneLog log4 = new PhoneLog(2,"Dialled","Seeta",LocalDateTime.of(2024, 7, 29, 12, 34));
 		PhoneLog log5 = new PhoneLog(1,"Missed","Jeeta",LocalDateTime.of(2024, 7, 29, 9, 54));
-
 		
 		//10
 		System.out.println("Container as growable array....");
 		//ArrayList<PhoneLog> listLogs = new ArrayList<PhoneLog>();
-		
-		
+			
 		//PhoneContact - contactNumber,contactName,emailAddress,speedDial
 		//LinkedList<PhoneLog> listLogs = new LinkedList<PhoneLog>();
-		
-		
+				
 		//ChemicalElement - atomicNumber,atomicName,atomicWeight,atomicFormula
 		TreeSet<PhoneLog> listLogs = new TreeSet<PhoneLog>();
-		
-		
+				
 		//Book - bookNumber, bookName, authorName, numberOfPages, bookPrice
 		//HashSet<PhoneLog> listLogs = new HashSet<PhoneLog>();
 		
@@ -44,6 +40,9 @@ public class ArrayListTest {
 		
 	}
 }
+
+
+
 class PhoneLog implements Comparable<PhoneLog>
 {
 	int num;
@@ -68,8 +67,6 @@ class PhoneLog implements Comparable<PhoneLog>
 		//return logType.compareTo(o.logType);
 		return Integer.compare(num, o.num);
 	}
-	
-	
 }
 		/*
 		 System.out.println("Creating array as Container...");

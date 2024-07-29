@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class SongComparatorTest {
 	public static void main(String[] args) {
@@ -24,15 +25,47 @@ public class SongComparatorTest {
         }
         
         System.out.println("SORTING...");
-        Collections.sort(myPlayList);
+        Collections.sort(myPlayList); //Comparable
         System.out.println("SORTED...");
         
         for(Song x : myPlayList) {
         	System.out.println("x "+x);
         }
+        System.out.println("===========now lets work with comparator=====");
+        Comparator<Song> comp = new ArtistComparator();
+        Collections.sort(myPlayList, comp);
+        for(Song x : myPlayList) {
+        	System.out.println("x "+x);
+        }
+        
 	}
 }
+//Hardik, Bhavya,  shresth, Ananya, Karthik, Yug, Kaustubh,
+//Batool, Dilip, Sarrah, Aakanksha, Vyashnav, Amith,
+// meet, Advaith
+// Smit, Mann
 
+class TitleComparator implements Comparator<Song>
+{
+	@Override
+	public int compare(Song o1, Song o2) {
+		return o1.title.compareTo(o2.title);
+	}
+}
+class AlbumComparator implements Comparator<Song>
+{
+	@Override
+	public int compare(Song o1, Song o2) {
+		return o1.album.compareTo(o2.album);
+	}
+}
+class ArtistComparator implements Comparator<Song>
+{
+	@Override
+	public int compare(Song o1, Song o2) {
+		return o2.artist.compareTo(o1.artist);
+	}
+}
 class Song implements Comparable<Song>
 {
 	String title;
@@ -53,10 +86,7 @@ class Song implements Comparable<Song>
 	}
 	@Override
 	public int compareTo(Song o) {
-		
+		//comparisn done on year
 		return Integer.compare(year, o.year);
-	}
-	
-	
-	
+	}	
 }

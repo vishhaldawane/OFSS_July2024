@@ -1,4 +1,6 @@
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListTest {
 	public static void main(String[] args) {
@@ -25,7 +27,31 @@ public class ArrayListTest {
 			System.out.println("Log : "+allLogs[i]);
 		}
 		
+		System.out.println("======================");
 		
+		//10
+		System.out.println("ArrayList as growable array....");
+		ArrayList<PhoneLog> listLogs = new ArrayList<PhoneLog>();
+		
+		System.out.println("Adding log to the ArrayList....");
+		listLogs.add(log1);
+		listLogs.add(log2);
+		listLogs.add(log3);
+		
+		System.out.println("Iterating through the ArrayList....");
+		Iterator<PhoneLog> iterator = listLogs.iterator();
+		while(iterator.hasNext()) {
+			PhoneLog theLog = iterator.next();
+			System.out.println("The Log : "+theLog);
+		}
+		System.out.println("==============");
+		listLogs.add(log4);
+		listLogs.add(log5);
+		iterator = listLogs.iterator();
+		while(iterator.hasNext()) {
+			PhoneLog theLog = iterator.next();
+			System.out.println("The Log : "+theLog);
+		}
 		
 	}
 }

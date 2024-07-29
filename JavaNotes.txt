@@ -557,12 +557,165 @@ class Car
 				    |			   |
 				-------------------------  | extends 
 				  |	implements	|  |
-				Thread			Person
-				| start(){}
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
 				|
 		---------------------------------
 		|	|	|	|
 	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
 
 
 

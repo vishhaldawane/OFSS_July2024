@@ -11,7 +11,7 @@ public class ArrayListTest {
 		System.out.println("Creating array as Container...");
 
 		PhoneLog allLogs[] = new PhoneLog[5];
-		
+		   
 		System.out.println("Storing PhoneLog as Content in the Container...");
 
 		allLogs[0] =log1;

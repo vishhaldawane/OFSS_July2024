@@ -17,8 +17,17 @@ public class ArrayListTest {
 		//10
 		System.out.println("Container as growable array....");
 		//ArrayList<PhoneLog> listLogs = new ArrayList<PhoneLog>();
+		
+		
+		//PhoneContact - contactNumber,contactName,emailAddress,speedDial
 		//LinkedList<PhoneLog> listLogs = new LinkedList<PhoneLog>();
+		
+		
+		//ChemicalElement - atomicNumber,atomicName,atomicWeight,atomicFormula
 		TreeSet<PhoneLog> listLogs = new TreeSet<PhoneLog>();
+		
+		
+		//Book - bookNumber, bookName, authorName, numberOfPages, bookPrice
 		//HashSet<PhoneLog> listLogs = new HashSet<PhoneLog>();
 		
 		System.out.println("Adding log to the Container....");

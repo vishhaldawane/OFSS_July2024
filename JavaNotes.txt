@@ -1,6 +1,18 @@
 
 
 
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
 
 
 
@@ -729,8 +741,189 @@ pay(){}   pay(){}   pay(){}
 
 
 
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
 
 
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
 
 
 

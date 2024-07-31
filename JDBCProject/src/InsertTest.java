@@ -19,19 +19,24 @@ public class InsertTest {
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "root123");
 			System.out.println("Connected to the DB : "+conn);
 			
+			conn.setAutoCommit(false);  //transaction management started
+			
+			
 			PreparedStatement pst = conn.prepareStatement("insert into emp values (?,?,?,?,?,?,?,?) ");
-			pst.setInt(1,2222);
-			pst.setString(2, "Sachin T");
+			pst.setInt(1,2233);
+			pst.setString(2, "Virat K");
 			pst.setString (3,"Cricketer");
-			pst.setInt(4,7839);
-			pst.setDate(5,Date.valueOf("1998-2-10"));
-			pst.setFloat(6,8888);
-			pst.setFloat(7, 444);
+			pst.setInt(4,2222);
+			pst.setDate(5,Date.valueOf("1999-4-15"));
+			pst.setFloat(6,7777);
+			pst.setFloat(7, 333);
 			pst.setInt(8, 10);
 			
 			int rows = pst.executeUpdate();
 			System.out.println(rows+" Record(s) inserted : ");
 
+			conn.commit();
+			System.out.println("Transaction committed....");
 			
 			pst.close();
 			conn.close();

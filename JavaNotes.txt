@@ -835,6 +835,13 @@ Following diagram is NOT of inheritance
 DAO Desing Pattern
 ---------------
 
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
 
 1. POJO
 	plain old java object

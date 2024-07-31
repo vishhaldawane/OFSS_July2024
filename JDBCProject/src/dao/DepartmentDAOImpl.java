@@ -94,14 +94,35 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
 	@Override
 	public void updateDepartment(Department deptObj) {
-		// TODO Auto-generated method stub
 
+		try {
+			PreparedStatement pst = conn.prepareStatement("update dept set dname=?, loc=? where deptno=?");
+			
+			pst.setInt(3,deptObj.getDepartmentNumber()); //WHERE
+			
+			pst.setString(1, deptObj.getDepartmentName()); //set col1
+			pst.setString (2,deptObj.getDepartmentLocation());		 //set col2
+			int rows = pst.executeUpdate();
+			System.out.println(rows+" Record(s) updated : ");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void deleteDepartment(int deptno) {
-		// TODO Auto-generated method stub
-
+		try {
+			PreparedStatement pst = conn.prepareStatement("delete from dept where deptno=?");
+			
+			pst.setInt(1,deptno); //WHERE
+			
+			int rows = pst.executeUpdate();
+			System.out.println(rows+" Record(s) deleted : ");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

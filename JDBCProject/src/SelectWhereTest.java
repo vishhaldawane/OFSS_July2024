@@ -25,7 +25,8 @@ public class SelectWhereTest {
 			Scanner scanner = new Scanner(System.in);
 			String scannedJob = scanner.next();
 			
-			ResultSet result = st.executeQuery("select * from emp where job="+"'"+scannedJob+"'");
+			ResultSet result = st.executeQuery("select * from emp "
+					+ "where job="+"'"+scannedJob+"'");
 			System.out.println("Got the result..."+result);
 			
 			Console console = System.console();

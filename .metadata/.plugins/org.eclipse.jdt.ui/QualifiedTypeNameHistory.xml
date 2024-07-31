@@ -21,4 +21,8 @@
     <fullyQualifiedTypeName name="CarKeyNotFoundException"/>
     <fullyQualifiedTypeName name="SpeedLimitExceededException"/>
     <fullyQualifiedTypeName name="TyrePuncturedException"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
 </qualifiedTypeNameHistroy>

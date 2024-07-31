@@ -869,61 +869,6 @@ DeptDAO
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Framework = semi-developed application
 
 1					I
@@ -965,6 +910,71 @@ Framework = semi-developed application
 
 	TS t = new TS();
 	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

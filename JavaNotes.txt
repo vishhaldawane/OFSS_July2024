@@ -832,6 +832,40 @@ Following diagram is NOT of inheritance
 
 
 
+DAO Desing Pattern
+---------------
+
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+
+
+
+
 
 
 

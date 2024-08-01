@@ -12,8 +12,17 @@ public class FileWriteTest {
 			System.out.println("File is ready for writing...");
 			Scanner scan = new Scanner(System.in);
 			System.out.println("Enter data : ");
-			String data = scan.nextLine(); // a line with Enter key
-			byte array[] = data.getBytes();//convert str into byte ary
+			
+			String line = null;
+			StringBuffer data = new StringBuffer();
+			
+			 // a line with Enter key
+			do {
+				line = scan.nextLine();
+				data.append("\n"+line);
+			}while ( ! line.equalsIgnoreCase("EOF"));
+			String converted = new String(data);
+			byte array[] = converted.getBytes();//convert str into byte ary
 			fout.write(array);
 			System.out.println("Data is written to the file...");
 			fout.close();

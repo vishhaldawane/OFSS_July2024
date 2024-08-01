@@ -963,6 +963,11 @@ tank|Bottom
 Kitchen
 
 
+	cmd1
+		java ServerProgram MSG_TO_CLIENT
+
+	cmd2
+		java ClientProgram localhost MSG_TO_SERVER
 
 
 

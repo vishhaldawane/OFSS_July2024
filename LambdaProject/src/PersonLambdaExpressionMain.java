@@ -14,8 +14,11 @@ class FirstNameComparator implements Comparator<Person> {
 
 public class PersonLambdaExpressionMain {
 
-	public static void printConditionally(List<Person> persons, Predicate<Person> predicate,
+	public static void printConditionally(
+			List<Person> persons, 
+			Predicate<Person> predicate,
 			Consumer<Person> consumer) {
+		
 		for (Person person : persons) {
 			if (predicate.test(person))
 				consumer.accept(person);
@@ -42,7 +45,11 @@ public class PersonLambdaExpressionMain {
 
 		System.out.println();
 		System.out.println("2. Create a function to print all persons and call it from main");
-		printConditionally(persons, (p) -> true, p -> System.out.println(p));
+		printConditionally(
+				persons, 
+				(p) -> true, 
+				p -> System.out.println(p)
+		);
 		printConditionally(persons, p -> true, System.out::println);
 
 		System.out.println();

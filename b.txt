@@ -1,0 +1,8982 @@
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+Private
+	1. Be Proactive
+	2. Put First thing First
+	3. Begin with the END in mind
+
+
+	4. Think WIN-WIN
+
+Public
+	5. Seek first to understand then to be understood
+	6. Synergize	
+	7. Sharpen the SAW
+
+
+
+			Java Technology
+				|
+		----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|
+Language fundamentals
+OOPS concepts
+	- association
+packages
+abstract classes
+interfaces
+
+
+
+
+
+
+
+				data types
+					|
+			-----------------------------
+			|			|
+		primitive			secondary
+			|				|
+	--------------------------		----------------------
+	|	|	|	|		|
+  integral   floating boolean character		Object
+	|
+	byte  1
+	short 2
+	int   4
+	long  8
+
+java data types size is fixed across all the JVMs
+
+
+
+
+
+
+
+
+
+
+			client
+			|
+			shirt piece
+
+
+
+Tailor 1. measure() { }
+	  pen, blank paper<-data, measuring tape
+	  client
+	  ..,..,..,....,..,,..,,..
+		[paper is with measurements] - ctor - init
+
+	2. drawTheCuttingDiagram(){ } on the cloth
+
+			chalk to draw on the cloth
+			tape
+			scale
+
+	3. cutting() {}  as per the diagram
+			scissor
+			
+	4. stitching() { }
+			pieces that are cut
+			sewing machine
+			needle
+			threads
+
+
+
+	What is a contract of a class
+
+		- the purpose of  data with its concerned functions
+
+
+		BankAccount
+			|	
+		------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount	CreditAccount
+	|
+FixedDepositAccount
+	|
+final class FlexiFixedDepositAccount
+
+
+POPS = procedures<--- data 
+OOPS = data<---procedure
+
+	class BankAccount
+	{
+		int accountNumber;
+		String accountHolderName;
+		double accountBalance;
+		
+		void withdraw(double amountToWithdraw) {
+			accountBalance -= amountToWithdraw;
+		}
+		void changeAccountHolderName(String newName) {
+			accountHolderName = newName;
+		}
+
+	}
+
+
+	class Song
+		String lyrics;
+
+		void setMusic() {
+		
+		}	
+	}
+	class ClassicalSong extends Song { }
+	class PopSong extends Song { }
+
+
+
+
+
+
+	
+
+int main() {
+
+	//UDT
+
+	//C++
+	class Book {
+		private:
+		int bookid;
+		char bookName[20];
+		char authorName[20];
+		float price;
+		int nop;
+
+		public:
+		//mutator
+		void setBookDetails(int a, char bn[], char an[], float p, int n)
+			....
+		}
+		//accessor
+		void showBookDetails() {
+			printf/cout
+		}
+	};
+	class Song {
+
+		int songid;
+		char artist[20];
+		char album[20];
+	}
+
+	struct Song s1={101,"Titanic","My Heart Will Go on"};
+	struct Book book1={101,"C++","Bjarne S",......};
+
+	s1.title = book1.authorname;
+
+	
+	struct Book book2={......};
+	struct Book book3={......};
+	struct Book book4={......};
+
+}
+
+
+
+	BankAccount baObjRef1 = new BankAccount();
+	|		|	|	 |
+	type	just a ref  allocator following it
+
+
+		STACK					HEAP
+
+
+					accountNumber accountHolderName accountBalance
+					---------------------------------------------
+					|	|			|	    |
+					---------------------------------------------
+		+----------------------->100
+		|
+		100
+		baObjRef1
+
+
+OOPS
+
+	1) Abstraction
+
+		it is the "what is?" part of an object
+
+			"what is an ATM?"
+
+		- hiding all the complexities of an object
+
+		- providing its usage by simple accesssible functions
+
+		a) data abstraction
+		b) procedural abstraction
+		c) class abstraction
+
+		class ATM
+		{
+			private double currentCash;
+			private int numberOfHits;
+
+			public void withdrawCash() {
+				....
+				....
+			}
+			private void logTheUser() {
+			
+			}
+			private class Permissions{ 
+				data + functions
+			}
+		}
+
+
+	2) Encapsulation
+
+		-it is the "how is it?" part of an object
+
+		-binding of data and concerned function
+
+		-coding for the complexities
+
+
+	3) Polymorphism
+
+		Ability of a business entity to have multiple forms
+
+		a) class extension
+
+				Doctor
+				|
+			---------------------
+			|
+			Surgeon
+			|
+			----------------------------------------------
+				|		|		|
+			HeartSurgeon	NeuroSurgeon	OrthoSurgeon
+
+
+		b) function overloading
+			function can be redefined on following terms
+			i) type of parameter
+			ii) number of parameters
+			iii) sequence of type of parameters
+
+
+		c) function overriding
+			let subclass redefine the function of the parent
+
+		d) operator overloading
+
+
+
+
+1. exclusive
+2. inherited
+3. inherited-cum-overridden
+4. implemented [ via interfaces / abstract classes ]
+
+interface X {
+	void fee();
+}
+
+class A
+{
+	void fun() { } //1
+	void far() { }
+}
+class B extends A implements X
+{
+	void foo() { } //1
+	//2 fun is inherited here
+	//3 far is inherited here and overridden
+	void far() {
+	}
+	void fee() { //4 mandatory implementation from X 
+	}
+}
+
+
+
+
+
+
+
+
+	4) Inheritance
+		acquiring properties from existing classes
+
+		a. single
+		b. multi
+		c. multiple level*
+		d. hierarchical level
+		
+
+	5) Object communication
+
+
+
+				Association
+					|
+		----------------------------------------------------
+		|		|		|		|
+		isA		hasA		usesA		producesA
+						passing object  return object
+						as argument	as return value
+
+
+class WashingMachine
+{
+	WashingTub tub= new WashingTub(); //hasA
+
+}
+
+class Heart
+{
+}
+class Human //Whole
+{
+	Heart myHeart = new Heart(); // hasA <-- part of the Whole
+}
+
+class Person extends Human //isA
+{
+}
+
+
+
+class Cell
+{
+	String column; // A B C AA AB AC
+	int row;
+	String value;
+}
+class WorkSheet
+{
+	//256 columns * 65535 rows
+
+	Cell cell1 = new Cell('A',1,'123'); //hasA
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell1 = new Cell('A',1,'123');
+	Cell cell65534
+}
+
+class WorkBook <-- myfile.xls
+{
+	WorkSheet sheet1 = new WorkSheet();
+	WorkSheet sheet2 = new WorkSheet();
+	WorkSheet sheet3 = new WorkSheet();
+
+}
+
+class Folder
+{
+	WorkBook book1 = new WorkBook();
+	WordDoc
+}
+
+
+
+
+
+
+class Person { }
+class Poet extends Person //isA
+{
+	Pen pen = new Pen(); //hasA
+	Paper paper = new Paper(); //hasA
+
+//producesA	    //usesA
+	Poetry write(Idea idea) {
+		String str = idea.getHint();		
+		paper.getIt();
+		pen.writing();
+		Poetry poetry = new Poetry("My Heart will go on");
+		return poetry;
+	}
+}
+
+class Idea
+{
+
+}
+class Main
+{
+	main() {
+		Idea theIdea = new Idea("love");
+		Poet poet = new Poet();
+		poet.write();
+	}
+}
+
+
+
+
+
+
+
+
+
+			field			method			class
+-------------------------------------------------------------------------------------------
+
+	final		constast		cannot be		cannot be
+						overridden		extended
+
+-------------------------------------------------------------------------------------------
+
+	static		sharable 		can refer		inner class
+			copy across		other static
+			the instances		members
+			of a class
+-------------------------------------------------------------------------------------------
+	
+
+	abstract	NA			"partial contract"	with 'optional'
+						of a class		partial contract
+
+-------------------------------------------------------------------------------------------
+
+
+
+class Tree
+{
+	BirdNest nest1 = new BirdNest(); //hasA - perfect
+	
+	static lass BirdNest
+	{
+
+	}
+}
+
+class MyBunglow 
+{
+	Tree.BirdNest nest2 = new Tree.BirdNest(); //hasA - artificial - bird has not found any tree what?
+
+}
+
+class Test
+{
+	main(){
+		
+		BirdNest nest3 = new BirdNest(); //local object 
+	}
+}
+
+-----------------------------------------
+
+
+
+	Exception handling
+	|
+	runtime errors
+
+
+				Errors
+				|
+		--------------------------------------------
+		|	   |	      |		|	 |
+		compile  runtime   linker	fatal	logical
+		|	  |		|	 |	   |
+		syntax  EXCEPTION  missing     RAM/issue   4+4 =16
+				   libraries   Drive 
+
+
+				Object
+				| wait wait wait notify notifyAll
+				| toString, clone, hashCode, equals, getClass, finalize
+			----------------------------
+			|
+			Throwable
+			|
+		-------------------
+		|		|
+		Error		Exception <-- can be caught using catch block
+				| "checked" by the compiler    JCE
+				|		   executing - JRE
+		------------------------------------------
+		|			| 		|
+		|		IOException	SQLException
+	RuntimeException
+	| "unchecked" by the compiler
+----------------------------------
+|		 |		|
+IndexOutOfBounds NullPointer  ArithmeticException
+Exception	 Exception
+	|
+--------------------------
+|			|
+ArrayIndexOut	StringIndexOut
+OfBoundsException  OfBoundsException
+
+
+
+class Main
+{
+	main()
+	{
+		Car car = new Car();
+		car.longDrive();
+	}
+}
+
+class Car
+{
+
+	void longDrive()
+	{
+		for(i=0;i<100;i++)
+		{
+
+		}
+	}
+}
+
+
+
+	Multithreading
+	----------------
+
+		- a thread is a series of statements 
+		- executed by the JVM thread mechanism
+
+
+		
+	1. extend from java.lang.Thread class
+	2. override the run() method
+		write the logic which participates in threading 
+	3. invoke the java.lang.Thread's start method, that initializes the thread data
+		
+	4. and then it runs the run() method of your thread class
+
+				  Runnable
+				    | run();		 Human
+				    |			   |
+				-------------------------  | extends 
+				  |	implements	|  |
+				Thread	.		Person
+				| start(){} -> talks toJVM's Thread scheduler
+				|
+		---------------------------------
+		|	|	|	|
+	      Bike  SedanCar	Train  Truck
+
+I. by extending java.lang.Thread class
+	a. write a class that extends java.lang.Thread class
+		class Bike extends Thread  { }
+	b. override the public void run() method - put your logic here
+		class Bike extends Thread {
+			public void run() {
+				code here
+			}
+		}
+	c. instantiate your class of step a
+		Bike b = new Bike();
+
+	d. invoke the start() method of the above object, b
+		which in turn invokes the run() method of it
+
+II. by implementing java.lang.Runnable interface
+
+	a. write a class that implements java.lang.Runnable class
+		class Person extends Human implements Runnable { }
+		class Person implements Runnable { }
+
+	b. implement [ mandatory ] public void run() method
+		and put your logic there 
+
+	c. Instantiate the above object of step a.
+
+		Person person = new Person(); // run method is here [ guaranteed ]
+
+	d. Create the object of java.lang.Thread class and to its constructor
+		pass the person object
+
+		Thread thread = new Thread ( person );
+
+	e. Invoke the start method of the above thread class that invokes the
+		run method of the passed object, ie, person object
+
+		thread.start(); -> person's run() invoked..
+
+
+
+
+
+
+
+
+Collection Framework
+
+java.util
+
+	Component's Orthogonal Space
+	
+
+				Content
+				| x
+				| ButterMilk
+				| Noodles
+				| FriedRice
+				| PaneerChilly
+				| Pickles
+				| CoconutWater
+	   ---------------------------------------
+	   |y					 |z
+	Container				Algorithm
+	|	|		i		|      |
+	|	+-------------------------------+    drink(){}
+	Bottle		     Iterator			eat(){}
+	Bowl			|			lick(){}					
+	Plate			Straw
+	Jar			ChopSticks
+				Spoon
+				Forks
+				PickleSpoon			
+
+
+
+
+
+
+
+
+
+	Payable(i)
+	|     Bill pay();
+	|
+ 	Taxes(i)
+	 |
+  ----------------
+  |		|
+PropertyTaxes IncomeTaxes (i)
+ |			|
+---------	 --------------
+|	|	 |	   |
+Shop	Car    Business  Trading <-- classes
+
+Bill pay()
+{
+  ShopBill sb = new ShopBill();
+  return sb;
+}	
+
+
+
+
+
+
+
+
+
+
+pay(){}   pay(){}   pay(){}
+
+
+				Iterable
+				|    Iterator iterator();
+				|
+				Collection
+				|
+				|
+		-------------------------------------
+		|				|
+		List				Set
+		|duplicates			|unique
+	--------------------		----------------------	
+	|		|		|		|
+   ArrayList	LinkedList	    TreeSet	    HashSet <-- Containers
+   |		   |
+ growable	node pointing
+ at the end     each other
+
+  CRUD
+		|   | <- |   | <-- |   |
+		----  -> ----- --> -----
+  Logs		cnt1       cnt2     cnt3
+						Root
+  -----					L		R
+0 |   |				L            R	   L          R
+  -----
+1 |   |
+  -----							
+2 |   |
+  -----
+3 |   |
+  -----
+4 |   |
+  -----
+5 |   |
+    |
+ appending here
+ is efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Comparable			Comparator
+	|
+	compareTo(Obj)			compare(obj1,obj2)
+
+
+ class ChemicalElement			class Song {
+   implements Comparable {			title,artist,album,year
+	
+  }					}
+TreeSet periodicTable;			class AlbumComparator  implements
+						Comparator<Song> { compare(s1,s2){}}
+	periodicTable.add(e1);			   
+					Comparator cmp = new AlbumComparator();
+					Collections.sort(songList,cmp);
+
+
+
+
+
+	JDBC
+
+		Java Database Connectivity
+
+	JDBC - API 
+
+
+		String				varchar2
+		int				number
+		float				number(10,2)
+		LocalDateTime			date
+		char				char
+		|				|	
+		FrontEnd	Driver		BackEnd
+		|		|		|
+		Java		connect		Oracle
+		.Net				MS-SQLServer
+						MySQL
+						Sybase
+						PostGres	
+						Informatica [ dataware house ]
+						MariaDB
+						MongoDB
+						Hana 
+
+
+Steps for JBDC
+
+1. know your database - oracle db | mysql
+2. know your driver - OracleDriver | com.mysql.cj.jdbc.Driver
+
+3. register it - DriverManager.registerDriver
+
+4. acquire the connection - DriverMAnager.getConnection(username,password, DSN)
+		DSN => Where is the DB [ ip : port 1521 ] : RAILWAY/ AIRLINE / BANKING
+
+	mysql->		jdbc:mysql://localhost:3306/mysql
+	oracle->	jdbc:oracle:thin:@localhost:1521:ORCL1
+			 |    |	       |	 |   |    |
+		      main   vendor subprotocol ip port  DB
+		     protocol
+
+
+5. make a desired statement [ select / insert / update / delete / procedure / function ]
+
+6. run teh statement | acquire the result if any
+7. process the result
+8. close the result, statement, connection
+
+
+Following diagram is NOT of inheritance
+
+
+				Driver <-- interface java.sql
+				  | |
+				  | OracleDriver <-class-- implementation of it oracle
+				  |
+			      DriverManager <-- class
+				  | registerDriver()
+				  | getConnection()
+				Connection
+				  |
+		---------------------------------------
+		|		  |		     |
+	 Statement	PreparedStatment	CallableStatement
+	  |			 |			  |
+	select		DML [ insert/update/delete]	procedure / function
+
+
+
+
+
+DAO Desing Pattern
+---------------
+
+dept	emp	customer	ord	item	product	price
+
+spring data jpa
+
+Dept
+
+DeptDAO
+
+1. POJO
+	plain old java object
+	Department
+		- fields identical to the relevant table with set/get
+
+2. POJI
+	plain old java interface
+	DepartmentDAO
+		CRUD methods declared
+3. POJI Impl
+	plain old java interface's implementation
+	DepartmentDAOImpl, DepartmentDAOImpl2, .... 
+
+
+			POJI
+			|DepartmentDAO
+		-----------------
+		|		 | 
+		POJIImpl1	POJIImpl2
+	DepartmentDAOImpl2	DepartmentDAOImpl2
+	   oracle db			ms-sql serer db
+	development time env		production time env
+
+
+
+
+Framework = semi-developed application
+
+1					I
+2		MI				MI		PI
+		|
+3	SBMI	ABMI   BBMI		SMI    PME			SI
+	|
+4=>	Guitar	Flute    Tabla		Cutter   GlucoMeter		SketchPen
+4.1=>   Violin  Shehnai  Duff		Needle	 ECGmachine		PencilCharcoal
+1,2,3 is a framework for instrument
+4 is implementation of the framework
+
+
+	Instrument i = new Instrument();
+
+	Instrument i = new Guitar();
+
+	i.use();
+	i.pluck();
+
+
+
+					Iterable
+					|3
+					Collection
+					|10
+					| add()
+				------------------
+				|		|
+				List		Set
+				|5		|7
+			------------		----------
+			|	  |		|	|
+			AL	  LL		TS	HS
+		add(){}		add(){}		add(){}	add(){}
+
+	AL a = new AL();
+	a.add
+
+	TS t = new TS();
+	t.add
+
+
+
+
+
+
+// 17:50
+
+File Handling
+
+java.io
+
+	all methods throws java.io.IOException - checked exception
+
+
+
+		
+
+	Keyboard					Monitor/Printer
+	|						|
+	input						output
+	|						|
+	System.in					System.out
+	|			YOU			|
+	+------->---->---->Java Program	---->---->------>
+				|data
+				| |<-- input/reading
+		----------------| |----------------
+		|	output->| |		|
+		Memory		File		Network [ socket ]
+
+--------------------------------------------------------------------------
+  	byte based stream		||	character based stream
+	8 bits 				||	16 bits - 65535
+	ASCII				||	UNICODE 
+--------------------------------------------------------------------------
+InputStream	   |  OutputStream	||	Reader	|	Writer
+  read()	   |     write()	||       read() |        write()
+--------------------------------------------------------------------------
+FileInputStream	   |			||		|
+--------------------------------------------------------------------------
+ 				
+tank|Top
+tank|
+tank|Bottom
+  <------inflow---base---|     |-<---main
+|
+|
+Kitchen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

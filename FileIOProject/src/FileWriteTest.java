@@ -18,8 +18,8 @@ public class FileWriteTest {
 			
 			 // a line with Enter key
 			do {
-				line = scan.nextLine();
-				data.append("\n"+line);
+				line = scan.nextLine(); //READ A NEW LINE
+				data.append("\n"+line); //STORE IT IN THE BUFFER with \n
 			}while ( ! line.equalsIgnoreCase("EOF"));
 			String converted = new String(data);
 			byte array[] = converted.getBytes();//convert str into byte ary
@@ -36,3 +36,14 @@ public class FileWriteTest {
 		
 	}
 }
+
+
+// windnows cmd line
+// c:\>  copy con a.txt
+// type some data
+// type some data
+// ^z <-ENTER KEY
+
+
+
+

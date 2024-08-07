@@ -1,0 +1,20 @@
+
+
+
+	1. table
+		normalization <==
+	2. pojo
+		JPA wizards <==
+
+	3. DAO or Repository
+		DAO via Junit <==== *
+
+	4. service 
+		serice Testing via Junit
+
+	5. Controller
+		controller testing Postman
+
+	6. UI - js/react/angular/jsp
+			   |
+			jasmine/karma

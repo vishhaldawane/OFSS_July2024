@@ -77,7 +77,6 @@ INDEX VERSION 1.131+/Users/apple/ofss/Java/.metadata/.plugins/org.eclipse.jdt.co
 1691715061.index
 1441901819.index
 3788677899.index
-2355479824.index
 3890015911.index
 1339453330.index
 4202778365.index
@@ -102,7 +101,6 @@ INDEX VERSION 1.131+/Users/apple/ofss/Java/.metadata/.plugins/org.eclipse.jdt.co
 1753063264.index
 3748929878.index
 959659150.index
-2764952376.index
 3720170322.index
 543041996.index
 1691770660.index

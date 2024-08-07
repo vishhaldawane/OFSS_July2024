@@ -1,13 +1,27 @@
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BankTest {
 
+	SavingsAccount sav ;
 	
+	@BeforeEach
+	void init() {
+		System.out.println("BankTest:init()....");
+		sav = new SavingsAccount();		
+	}
+	
+	@AfterEach
+	void over() {
+		System.out.println("BankTest:over()....");
+		sav = null;
+	}
+
 	@Test
 	public void testCase3() {
 		System.out.println("testCase3: WITHDRAW...");
-		SavingsAccount sav = new SavingsAccount();		
 	Assertions.assertTrue(sav!=null);
 		sav.setAccountNumber(1);
 		sav.setAccountHolder("Jack");

@@ -36,6 +36,7 @@ public class SavingsAccount {
 	void deposit(double amt) {
 		System.out.println("Depositing amt "+amt);
 		accountBalance+=amt;
+		accountBalance-=1;
 	}
 	
 }

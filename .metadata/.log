@@ -2210,3 +2210,45 @@ java.lang.InterruptedException
 
 !ENTRY Activator 1 0 2024-08-07 11:05:38.047
 !MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:07:22.312
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:07:22.939
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:08:17.979
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:08:18.626
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-08-07 11:09:07.057
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2092)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY Activator 1 0 2024-08-07 11:09:16.133
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:09:16.746
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:10:37.425
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:10:38.056
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:10:54.437
+!MESSAGE Has main method computation for project 'demo'
+
+!ENTRY Activator 1 0 2024-08-07 11:10:55.093
+!MESSAGE Has main method computation for project 'demo'

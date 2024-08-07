@@ -5,7 +5,8 @@ public class BankTest {
 
 	
 	@Test
-	public void withdrawTest() {
+	public void testCase3() {
+		System.out.println("testCase3: WITHDRAW...");
 		SavingsAccount sav = new SavingsAccount();		
 	Assertions.assertTrue(sav!=null);
 		sav.setAccountNumber(1);
@@ -19,7 +20,9 @@ public class BankTest {
 	}
 	
 	@Test // TDD
-	public void depositTest() {
+	public void testCase1() {
+		System.out.println("testCase1: DEPSOIT...");
+
 		SavingsAccount sav = new SavingsAccount();		
 		Assertions.assertTrue(sav!=null);
 			double openingBalance=50000;
@@ -35,7 +38,9 @@ public class BankTest {
 	}
 	
 	@Test // TDD
-	public void accountArrayTest() {
+	public void testCase2() {
+		System.out.println("testCase2: ARRAY...");
+
 		SavingsAccount savAry[]=
 				{
 				new SavingsAccount(101,"Jack",50000),

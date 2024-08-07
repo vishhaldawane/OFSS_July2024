@@ -5,10 +5,15 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class DepartmentDAOImpl implements DepartmentDAO {
 	
@@ -68,6 +73,44 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		return dept;
 	}
 
+	public JSONArray readDepartmentsInJSON() {
+		
+		Department dept = null;
+		ArrayList<Department> deptList = new ArrayList<Department>();
+	    JSONParser parser = new JSONParser();
+        Object obj = parser.parse(s);
+        JSONArray array = (JSONArray)obj;
+
+		try {
+			Statement statement = conn.createStatement();
+			ResultSet result = statement.executeQuery("select * from dept");
+			ResultSetMetaData rsmd = result.getMetaData();
+			int columnCount=rsmd.getColumnCount();
+			String columnNames[]=new String[columnCount];
+			for (int i = 0; i < columnCount; i++) {
+				columnNames[i]=rsmd.getColumnName(i+1);
+				System.out.println("Col : "+columnNames[i]);
+			}
+			
+		
+		    
+		    int i=0;
+			while(result.next()) {
+			    JSONObject obj = new JSONObject();
+			    obj.put(columnNames[0], result.getInt(1));
+			    obj.put(columnNames[1], result.getString(2));
+			    obj.put(columnNames[2], result.getString(3));
+			    jsonArray.add(obj);
+			    i++;
+			    System.out.println("=VALUE:"+obj);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jsonArray;
+	}
 	@Override
 	public List<Department> readDepartments() {
 		Department dept = null;

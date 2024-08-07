@@ -9,6 +9,8 @@ public class DaoTest {
 		
 		DepartmentDAO dao = new DepartmentDAOImpl();
 
+		dao.readDepartmentsInJSON();
+		
 		/*Department dept = new Department();
 		dept.setDepartmentNumber(10);
 		dept.setDepartmentName("Acc");
@@ -16,7 +18,7 @@ public class DaoTest {
 		
 		dao.updateDepartment(dept);*/
 		
-		dao.deleteDepartment(50);
+		//dao.deleteDepartment(50);
 		
 		
 		/*

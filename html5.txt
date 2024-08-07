@@ -1,0 +1,31 @@
+canvas - to show bar chart
+date picker
+progress bar 
+iframe for map
+-----
+
+jmap
+page slider
+hover
+accordian
+-----
+data list
+--------
+
+refill values
+
+Aman
+Pratham
+Sakshi
+Navya
+-----------
+
+OnlineLoan Systen = good one
+Advaith
+Yug
+Mansha
+Smit
+---------------
+
+
+

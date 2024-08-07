@@ -972,12 +972,107 @@ Kitchen
 
 
 
+{
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+
+
+	class GeoLocation
+	{
+		String lat;
+		String lng;
+	}
+
+	class HomeAddress
+	{
+		String street;
+		String suite;
+		String city;
+		String zipcode;
+		GeoLocation geo;
+	}
+	class User
+	{
+		int id;
+		String name;
+		String username;
+		String email;
+		HomeAddress address;
+
+	}
 
 
 
+CICD
+--------------
+	Contineous Integration Contineous Deployment
+
+			DEV-OPS
+
+
+	Compile		Test		Package		Deploy
+	|		|		|		|
+	javac Abc.java	|		|		|
+	  Pqr.java	AbcTest.java	Abc.class	On the container [ target server ]
+	  Xyz.java	test cases	Pqr.class	for the usage 
+			must be		Xyz.class
+			passed		|
+					Project.jar/war
+
+	devlopment			deployment
+	|				|
+	Developer	Tester		Packager	Deployer
+	|		|
+	javac		testing
+class SavingsAccount
+{
+  bal = 50000
+  withdraw(float amt)
+  {
+    bal-=amt;
+    //bal=bal-1;
+  }
+
+}
+
+
+javac JungleTest.java --> generated many class files
+
+jar -cvf jungle.jar *.class
+
+	-c create
+	-v verbose
+	-f file to create
 
 
 
+jar -xvf jungle.jar
+	-x extract
+
+
+jar -tvf jungle.jar
+	table of content
+
+
+.war = web archieve
+	it is a jar file 
+	but the extension is .war
+	
+.ear = enterprise archieve
+
+	
 
 
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web</title>
+</head>
+
+<body>
+    <h1 style="color: green;">
+        GeeksforGeeks
+    </h1>
+    <button id="Button">
+        Fetch Data
+    </button>
+    <div id="data1"></div>
+  
+    <script>
+        let Button = document.getElementById("Button");
+        let data1 = document.getElementById("data1");
+        Button.addEventListener("click", () => {
+            let x = new XMLHttpRequest();
+            x.open("GET",
+"https://jsonplaceholder.typicode.com/posts/1", true);
+            x.onload = function () {
+                if (x.status === 200) {
+                    const data = JSON.parse(x.responseText);
+                    data1.textContent = `Title: ${data.title}`;
+                } else {
+                    console.error(
+                          "Request failed with status:", x.status);
+                }
+            };
+            x.onerror = function () {
+                console.error(
+                      "An error occurred during the request.");
+            };
+            x.send();
+        });
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,103 @@
+
+
+
+Java Script
+
+		- nothing to do with Java
+
+
+	script = interpretation of the code
+
+
+	Programming				Scripting
+	|					|
+	C					X
+	C++					X
+	Java					Javascript
+	X					PLSQL SCripting
+	X					Unix shell scripting
+						
+	First.c		First.c			code in a file
+	|		|			|
+comp	First.obj	First.o			interpreted 
+	|		|			
+	|		|			Shell	    DB ENgine   Browser
+linker	First.exe	First.out		Unix shell  PLSQL  JAvaScript
+
+
+	First.java
+	|
+	First.class
+
+
+
+	HTML	CSS	JAVASCRIPT 	AJAX	JQUERY	XML	Angular
+	|	|	|		|	     |	 |	   |
+	view	style	validation	asynchronous lib |	 MVC framework
+			|		javascript   transport
+			frontEnd	with XML
+			
+
+
+	four types of java applicaitons
+
+	1. Sop
+	
+	2. GUI - Frame
+
+	3. Sop + Socket 
+
+	4. GUI + Socket
+/
+
+Development env structure
+
+			GreetingProject
+				|
+				|
+			----------------
+			|
+			src
+			|
+			main
+			|
+		-----------------
+		|		|
+		webapp		----------------------------+  GET|PUT|POST|DELETE
+		|		|	|	|	    | CRUD	
+	-----------------	dept  deptDAO deptDAOIMPL  DeptService
+	|
+index.html
+  FORM <-- view
+index.css <-- style
+index.js <-- validation
+
+
+Deployment env structure
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

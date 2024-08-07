@@ -9,7 +9,7 @@ public class DaoTest {
 		
 		DepartmentDAO dao = new DepartmentDAOImpl();
 
-		dao.readDepartmentsInJSON();
+		//dao.readDepartmentsInJSON();
 		
 		/*Department dept = new Department();
 		dept.setDepartmentNumber(10);

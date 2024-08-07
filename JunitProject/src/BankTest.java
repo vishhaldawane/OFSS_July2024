@@ -1,7 +1,8 @@
+import org.junit.Ignore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class BankTest {
 
@@ -19,6 +20,8 @@ public class BankTest {
 		sav = null;
 	}
 
+	
+	@Ignore
 	@Test
 	public void testCase3() {
 		System.out.println("testCase3: WITHDRAW...");

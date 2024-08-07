@@ -1074,13 +1074,29 @@ jar -tvf jungle.jar
 
 	
 
+			FirstDayAtSchool
+				|
+			------------------
+			|		|
+		prepareMyBag()		addPencils()
+		 Books,NoteBooks,Pens	Books,NoteBooks,Pens,Pencils
 
 
+		A	FirstDayAtSchoolTest | 1 class with 2 test cases
+			|
+			+---@Test testPrepareMyBag(){} x
+			|
+			+---@Test testAddPencils(){ } y
 
 
+	B						C
+	AddPencilsTest				PrepareMyBagTest
+	|					|
+	@Test testAddPencils()			@Test testPrepareMyBag()
+		x					y	
 
 
-
+	
 
 
 

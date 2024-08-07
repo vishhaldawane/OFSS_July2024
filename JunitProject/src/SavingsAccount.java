@@ -4,6 +4,17 @@ public class SavingsAccount {
 	private String accountHolder;
 	private double accountBalance;
 	
+	
+	public SavingsAccount() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public SavingsAccount(int accountNumber, String accountHolder, double accountBalance) {
+		super();
+		this.accountNumber = accountNumber;
+		this.accountHolder = accountHolder;
+		this.accountBalance = accountBalance;
+	}
 	public int getAccountNumber() {
 		return accountNumber;
 	}

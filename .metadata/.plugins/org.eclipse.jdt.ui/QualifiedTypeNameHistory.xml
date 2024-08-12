@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="BankAccount1"/>
-    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="HeartSurgeon"/>
-    <fullyQualifiedTypeName name="GraphicalChess"/>
-    <fullyQualifiedTypeName name="BankAccount"/>
-    <fullyQualifiedTypeName name="BankPermission"/>
-    <fullyQualifiedTypeName name="BankAccount.BankPermission"/>
     <fullyQualifiedTypeName name="GeometricalShape"/>
     <fullyQualifiedTypeName name="Seminar"/>
     <fullyQualifiedTypeName name="Executing"/>
@@ -30,8 +22,6 @@
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="dao.Department"/>
-    <fullyQualifiedTypeName name="dao.DepartmentDAOImpl"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
@@ -57,4 +47,17 @@
     <fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
     <fullyQualifiedTypeName name="org.glassfish.jersey.process.internal.RequestScoped"/>
     <fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="dao.DepartmentDAOImpl"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
+    <fullyQualifiedTypeName name="org.junit.Ignore"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="restaurant.dao.TeaDAOImpl"/>
+    <fullyQualifiedTypeName name="restaurant.dao.TeaDAO"/>
+    <fullyQualifiedTypeName name="SnacksDAOTest"/>
+    <fullyQualifiedTypeName name="restaurant.dao.Snacks"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="restaurant.dao.SnacksDAO"/>
+    <fullyQualifiedTypeName name="restaurant.dao.SnacksDAOImpl"/>
+    <fullyQualifiedTypeName name="restaurant.dao.Tea"/>
 </qualifiedTypeNameHistroy>

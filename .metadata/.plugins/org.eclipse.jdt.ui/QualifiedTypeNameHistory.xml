@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="GeometricalShape"/>
-    <fullyQualifiedTypeName name="Seminar"/>
-    <fullyQualifiedTypeName name="Executing"/>
-    <fullyQualifiedTypeName name="CurrentAccount"/>
-    <fullyQualifiedTypeName name="SavingsAccount"/>
-    <fullyQualifiedTypeName name="FundsTransferService"/>
-    <fullyQualifiedTypeName name="Withdrawing"/>
-    <fullyQualifiedTypeName name="Depositing"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="CarKeyNotFoundException"/>
     <fullyQualifiedTypeName name="SpeedLimitExceededException"/>
     <fullyQualifiedTypeName name="TyrePuncturedException"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
@@ -49,7 +39,6 @@
     <fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
     <fullyQualifiedTypeName name="dao.DepartmentDAOImpl"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
     <fullyQualifiedTypeName name="org.junit.Ignore"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="restaurant.dao.TeaDAOImpl"/>
@@ -60,4 +49,15 @@
     <fullyQualifiedTypeName name="restaurant.dao.SnacksDAO"/>
     <fullyQualifiedTypeName name="restaurant.dao.SnacksDAOImpl"/>
     <fullyQualifiedTypeName name="restaurant.dao.Tea"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="com.oracle.project.layer2.IndianRailwayTicket"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
 </qualifiedTypeNameHistroy>

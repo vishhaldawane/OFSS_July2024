@@ -2,4 +2,5 @@
 <typeInfoHistroy>
     <typeInfo handle="=JDBCProject/\/Applications\/SpringToolSuite4.app\/Contents\/Eclipse\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_16.0.1.v20210528-1205\/jre\/lib\/jrt-fs.jar`java.base=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/16\/docs\/api\/=/&lt;java.lang(RuntimeException.class[RuntimeException" modifiers="33" timestamp="1623997558000"/>
     <typeInfo handle="=JDBCProject/src&lt;dao{DepartmentDAO.java[DepartmentDAO" modifiers="513" timestamp="1722504902000"/>
+    <typeInfo handle="=SpringBoot/\/Users\/apple\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/3.2.2\/spring-data-commons-3.2.2.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/3.2.2=/=/maven.scope=/compile=/&lt;org.springframework.data.repository(CrudRepository.class[CrudRepository" modifiers="1537" timestamp="1723448029000"/>
 </typeInfoHistroy>

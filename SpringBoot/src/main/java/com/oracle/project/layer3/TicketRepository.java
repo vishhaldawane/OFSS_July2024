@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.oracle.project.layer2.IndianRailwayTicket;
 
-@Repository
+@Repository			//Department ->DepartmentDAO->DepartmentDAOImpl
 public interface TicketRepository extends CrudRepository<IndianRailwayTicket, Integer> {
 
 }
+//now spring would provide the implementation
+//of TicketRepository interface
+//as SimpleCrudRepository

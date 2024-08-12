@@ -1,0 +1,7 @@
+create table ticket
+(
+   ticketid number primary key,
+   source varchar(20),
+   destin varchar(20),
+   cost number
+);

@@ -9,22 +9,31 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.oracle.project.layer2.IndianRailwayTicket;
+import com.oracle.project.layer3.TicketRepository;
 import com.oracle.project.pojo.FlightEnquiry;
 
 @SpringBootTest
-class ApplicationTests {
+public class ApplicationTests {
 
 	@Autowired
-	Car theCar1;
-
-
+	TicketRepository ticketRepository;
+	
+	@Autowired
+	IndianRailwayTicket indRailTkt;
 
 	@Test
-	void contextLoads() {
-		System.out.println("--> test case1 started...");
-		theCar1.drive();
-		System.out.println("--> test case2 finished...");
-
+	public void contextLoads() {
+	
+		indRailTkt.setTicketId(223);
+		indRailTkt.setPassengerName("Sarah");
+		indRailTkt.setSourceCity("Delhi");
+		indRailTkt.setDestinationCity("Dubai");
+		indRailTkt.setAge(22);
+		indRailTkt.setTicketCost(45000);
+		System.out.println("object filled up...");
+		ticketRepository.save(indRailTkt);
+		System.out.println("Object stored...");
 	}
 
 }

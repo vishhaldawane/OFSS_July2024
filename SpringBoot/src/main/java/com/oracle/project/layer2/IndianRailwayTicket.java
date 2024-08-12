@@ -1,22 +1,28 @@
 package com.oracle.project.layer2;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
-import jakarta.persistence.Column;
+/*import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+*/
 
 @Component
-@Entity // <-- there would be a table for it
+@Entity
+//@jakarta.persistence.Entity
 //@Table(name="indianrailwayticket") // optional annotation
 public class IndianRailwayTicket { //name of the table is same as the class
 	
-	@Id //mandatory annotation if the entity is declared with @Entity
-	@Column(name="tktid") 
+	//@jakarta.persistence.Id
+	//@Column(name="tktid") 
+	@Id
 	private int ticketId; //ticket_id
 	
-	@Column(name="pname")
+	//@Column(name="pname")
 	private String passengerName; //passenger_name
 	private int age; 
 	private String sourceCity;
